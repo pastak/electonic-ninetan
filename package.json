@@ -1,0 +1,32 @@
+{
+  "name": "electonic-ninetan",
+  "version": "0.0.1",
+  "description": "",
+  "main": "init.js",
+  "scripts": {
+    "test": "standard ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pastak/electonic-ninetan.git"
+  },
+  "author": "pastak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pastak/electonic-ninetan/issues"
+  },
+  "homepage": "https://github.com/pastak/electonic-ninetan#readme",
+  "compileCacheDir": "./compile-cache",
+  "devDependencies": {
+    "electron-compilers": "^1.0.0",
+    "electron-prebuilt": "^0.34.0"
+  },
+  "dependencies": {
+    "electron-compile": "^1.0.0",
+    "electron-packager": "^5.1.0",
+    "react": "^0.14.0",
+    "react-desktop": "^0.1.35",
+    "request-promise": "^1.0.1",
+    "yargs": "^3.27.0"
+  }
+}
