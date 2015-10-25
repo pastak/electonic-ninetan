@@ -4,7 +4,10 @@
   "description": "",
   "main": "init.js",
   "scripts": {
-    "test": "standard ./**/*.js"
+    "run": "electron . --environment development",
+    "build": "./script/compile && electron-packager ./ electonic-ninetan --platform=all --arch=all --version=0.34.0 --asar --out=build --ignore=build --overwrite",
+    "build-mac": "./script/compile && electron-packager ./ electonic-ninetan --platform=darwin --arch=x64 --version=0.34.0 --asar  --out=build --ignore=build --overwrite",
+    "build-linux": "./script/compile && electron-packager ./ electonic-ninetan --platform=linux --arch=x64 --version=0.34.0 --prune --asar  --out=build --ignore=build --overwrite"
   },
   "repository": {
     "type": "git",
@@ -24,8 +27,10 @@
   "dependencies": {
     "electron-compile": "^1.0.0",
     "electron-packager": "^5.1.0",
+    "mkdirp": "^0.5.1",
+    "node-localstorage": "^0.6.0",
     "react": "^0.14.0",
-    "react-desktop": "^0.1.35",
+    "react-dom": "^0.14.0",
     "request-promise": "^1.0.1",
     "yargs": "^3.27.0"
   }
