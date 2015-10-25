@@ -59,7 +59,7 @@ const updateMenu = () => {
   }).then(() => {
     menuItems.push({type: 'normal', label: 'settings', click: () => {
       const bw = new BrowserWindow({height: 630})
-      bw.loadUrl(`file://${require('path').resolve('app/renderer/settings.html')}`)
+      bw.loadUrl(`file://${require('path').resolve(__dirname,'renderer/settings.html')}`)
       bw.show()
     }})
     menuItems.push({type: 'normal', label: 'quit', click: app.quit})
