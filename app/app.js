@@ -55,6 +55,10 @@ const updateMenu = () => {
       }
       menuItems.push({type: 'separator'})
       next()
+    }).catch((error) => {
+      menuItems.push({type: 'normal', label: 'failed to connect'})
+      menuItems.push({type: 'separator'})
+      next()
     })
   }).then(() => {
     menuItems.push({type: 'normal', label: 'settings', click: () => {

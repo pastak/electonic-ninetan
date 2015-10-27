@@ -15,7 +15,7 @@ export default class Ninetan {
     } else if (this.areaName) {
       jsFullPath = `http://sx9.jp/weather/${this.areaName}.js`
     }
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       request(jsFullPath).then((jsString) => {
         const ndl = new NinetanDataLoader()
         /* eslint-disable-line */
@@ -26,7 +26,7 @@ export default class Ninetan {
         getNinetandata(ndl)
         /* eslint-disable-line */
         resolve(ndl)
-      })
+      }).catch(reject)
     })
   }
 }
