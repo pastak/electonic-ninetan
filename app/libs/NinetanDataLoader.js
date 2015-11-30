@@ -86,7 +86,8 @@ export default class NinetanDataLoader {
       if (type === 'end' && !r) {
         const lastRow = this.rows[this.rows.length - 1]
         return {
-          label: `It rails until ${lastRow.date}`
+          label: `It rails until ${lastRow.date}`,
+          type: 'normal'
         }
       }
     } else {

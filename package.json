@@ -1,13 +1,13 @@
 {
   "name": "electonic-ninetan",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "init.js",
   "scripts": {
     "run": "electron . --environment development",
-    "build": "./script/compile && electron-packager ./ electonic-ninetan --platform=all --arch=all --version=0.34.0 --asar --out=build --ignore=build --overwrite",
-    "build-mac": "./script/compile && electron-packager ./ electonic-ninetan --platform=darwin --arch=x64 --version=0.34.0 --asar  --out=build --ignore=build --overwrite",
-    "build-linux": "./script/compile && electron-packager ./ electonic-ninetan --platform=linux --arch=x64 --version=0.34.0 --prune --asar  --out=build --ignore=build --overwrite"
+    "build": "./script/compile && electron-packager ./ electonic-ninetan --platform=all --arch=all --version=0.33.8 --asar --out=build --ignore=build --overwrite",
+    "build-mac": "./script/compile && electron-packager ./ electonic-ninetan --platform=darwin --arch=x64 --version=0.33.8 --asar  --out=build --ignore=build --overwrite",
+    "build-linux": "./script/compile && electron-packager ./ electonic-ninetan --platform=linux --arch=x64 --version=0.33.8 --prune --asar  --out=build --ignore=build --overwrite"
   },
   "repository": {
     "type": "git",

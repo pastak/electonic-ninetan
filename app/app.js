@@ -38,7 +38,7 @@ const updateMenu = () => {
     ninetan.load().then((data) => {
       const sooner = data.sooner
       if (sooner.start) {
-        if (sooner.start <= 15 || 1) {
+        if (sooner.start <= 15) {
           // 15min
           isRainNear = true
         }
