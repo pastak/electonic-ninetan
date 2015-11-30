@@ -67,7 +67,9 @@ const updateMenu = () => {
       bw.show()
     }})
     menuItems.push({type: 'normal', label: 'quit', click: app.quit})
-    appIcon.setContextMenu(Menu.buildFromTemplate(menuItems))
+    const _m = Menu.buildFromTemplate(menuItems)
+    console.log('aaa')
+    appIcon.setContextMenu(_m)
     if (isRainNear) {
       appIcon.setImage(`${__dirname}/data/img/umbrella.png`)
     } else {
