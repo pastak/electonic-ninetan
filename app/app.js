@@ -1,12 +1,8 @@
-import app from 'app'
-import Tray from 'tray'
+import {app, Tray, Menu, shell, BrowserWindow} from 'electron'
 import Ninetan from './libs/Ninetan'
-import Menu from 'menu'
-import shell from 'shell'
 import mkdirp from 'mkdirp'
-import forEachPromise from './libs/forEachPromise'
-import BrowserWindow from 'browser-window'
 import { LocalStorage } from 'node-localstorage'
+import forEachPromise from './libs/forEachPromise'
 
 const lsDir = app.getPath('appData') + '/electonic-ninetan/Local Storage/node'
 mkdirp.sync(lsDir)
@@ -63,12 +59,11 @@ const updateMenu = () => {
   }).then(() => {
     menuItems.push({type: 'normal', label: 'settings', click: () => {
       const bw = new BrowserWindow({height: 630})
-      bw.loadUrl(`file://${require('path').resolve(__dirname,'renderer/settings.html')}`)
+      bw.loadURL(`file://${require('path').resolve(__dirname,'renderer/settings.html')}`)
       bw.show()
     }})
     menuItems.push({type: 'normal', label: 'quit', click: app.quit})
     const _m = Menu.buildFromTemplate(menuItems)
-    console.log('aaa')
     appIcon.setContextMenu(_m)
     if (isRainNear) {
       appIcon.setImage(`${__dirname}/data/img/umbrella.png`)

@@ -1,13 +1,13 @@
 {
   "name": "electonic-ninetan",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "",
   "main": "init.js",
   "scripts": {
     "run": "electron . --environment development",
-    "build": "./script/compile && electron-packager ./ electonic-ninetan --platform=all --arch=all --version=0.35.2 --asar --out=build --ignore=build --overwrite",
-    "build-mac": "./script/compile && electron-packager ./ electonic-ninetan --platform=darwin --arch=x64 --version=0.35.2 --asar  --out=build --ignore=build --overwrite",
-    "build-linux": "./script/compile && electron-packager ./ electonic-ninetan --platform=linux --arch=x64 --version=0.35.2 --prune --asar  --out=build --ignore=build --overwrite"
+    "build": "./script/compile && electron-packager ./ electonic-ninetan --platform=all --arch=all  --prune --asar --out=build --ignore=build --overwrite",
+    "build-mac": "./script/compile && electron-packager ./ electonic-ninetan --platform=darwin --arch=all --prune --asar  --out=build --ignore=build --overwrite",
+    "build-linux": "./script/compile && electron-packager ./ electonic-ninetan --platform=linux --arch=all --prune --asar  --out=build --ignore=build --overwrite"
   },
   "repository": {
     "type": "git",
@@ -21,17 +21,19 @@
   "homepage": "https://github.com/pastak/electonic-ninetan#readme",
   "compileCacheDir": "./compile-cache",
   "devDependencies": {
-    "electron-compilers": "^1.0.0",
-    "electron-prebuilt": "^0.35.2"
+    "electron-compilers": "^4.0.3",
+    "electron-prebuilt": "^1.4.5"
   },
   "dependencies": {
-    "electron-compile": "^1.0.0",
-    "electron-packager": "^5.1.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "electron-compile": "^3.3.6",
+    "electron-packager": "^8.2.0",
     "mkdirp": "^0.5.1",
-    "node-localstorage": "^0.6.0",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "request-promise": "^1.0.1",
-    "yargs": "^3.27.0"
+    "node-localstorage": "^1.3.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "request-promise": "^4.1.1",
+    "yargs": "^6.3.0"
   }
 }

@@ -18,6 +18,7 @@ export default class Ninetan {
     return new Promise((resolve, reject) => {
       request(jsFullPath).then((jsString) => {
         const ndl = new NinetanDataLoader()
+        let getNinetandata
         /* eslint-disable-line */
         eval(`${jsString}
         getNinetandata = function(data) {

@@ -1,10 +1,10 @@
-import remote from 'remote'
+import {remote} from 'electron'
 import React from 'react'
 import { LocalStorage } from 'node-localstorage'
 import AreasList from './AreasList'
 import SelectedList from './SelectedList'
 
-const app = remote.require('app')
+const {app} = remote
 
 const lsDir = app.getPath('appData') + '/electonic-ninetan/Local Storage/node'
 const ls = new LocalStorage(lsDir)
@@ -15,7 +15,6 @@ export default class SettingsApp extends React.Component {
   constructor (props) {
     super(props)
     const selected = JSON.parse(ls.getItem('areas')) || []
-    console.log(selected)
     this.state = {
       selectedArea: selected,
       unselectedArea: areas.filter((item) => {
