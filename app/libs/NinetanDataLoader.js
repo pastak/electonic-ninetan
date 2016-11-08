@@ -56,7 +56,7 @@ export default class NinetanDataLoader {
     const row = this.rows[r]
     let precipitation = null
     let percentage = null
-    for (p of row.precipitations){
+    for (const p of row.precipitations){
     if (p.percentage === 0) {
       break
     }
