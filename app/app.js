@@ -12,7 +12,15 @@ if (process.platform === 'darwin') {
   app.dock.hide()
 }
 let appIcon = null
-const areas = JSON.parse(ls.getItem('areas'))
+
+const areasJson = ls.getItem('areas')
+let areas = null
+if (areasJson){
+    areas = JSON.parse(areasJson)
+}else{
+    var allAreas = require('./data/areas.json')
+    areas = [allAreas[0]]
+}
 
 const areaNameClick = (areaName) => {
   return () => {
