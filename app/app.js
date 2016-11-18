@@ -12,7 +12,15 @@ if (process.platform === 'darwin') {
   app.dock.hide()
 }
 let appIcon = null
-const areas = JSON.parse(ls.getItem('areas'))
+
+const areasJson = ls.getItem('areas')
+let areas = null
+if (areasJson){
+    areas = JSON.parse(areasJson)
+}else{
+    var allAreas = require('./data/areas.json')
+    areas = [allAreas[0]]
+}
 
 const areaNameClick = (areaName) => {
   return () => {
@@ -71,6 +79,12 @@ const updateMenu = () => {
     } else {
       appIcon.setImage(`${__dirname}/data/img/sun.png`)
     }
+  }).catch((error) =>{
+    console.error(error)
+    menuItems.push({label: 'Caught error'})
+    menuItems.push({type: 'normal', label: 'quit', click: app.quit})
+    const _m = Menu.buildFromTemplate(menuItems)
+    appIcon.setContextMenu(_m)
   })
 }
 
