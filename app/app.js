@@ -71,6 +71,12 @@ const updateMenu = () => {
     } else {
       appIcon.setImage(`${__dirname}/data/img/sun.png`)
     }
+  }).catch((error) =>{
+    console.error(error)
+    menuItems.push({label: 'Caught error'})
+    menuItems.push({type: 'normal', label: 'quit', click: app.quit})
+    const _m = Menu.buildFromTemplate(menuItems)
+    appIcon.setContextMenu(_m)
   })
 }
 
